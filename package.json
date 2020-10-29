@@ -1,0 +1,31 @@
+{
+  "name": "my-projectsever",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "set PORT=8000 && jest --coverage --setTimeout=30000 --detectOpenHandles --verbose",
+    "build": ".\\node_modules\\.bin\\babel src --out-dir dist",
+    "start": "node dist/index.js",
+    "dev": "nodemon --exec babel-node src/index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.0",
+    "@babel/core": "^7.12.0",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-transform-runtime": "^7.12.0",
+    "@babel/preset-env": "^7.12.0",
+    "jest": "^26.6.1",
+    "nodemon": "^2.0.5",
+    "supertest": "^5.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
