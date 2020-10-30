@@ -1,5 +1,5 @@
 import  express from 'express';
-import { user_signup, user_login, single_user, all_users, delete_user, update_user } from '../controller/userAuthForms'
+import { user_signup, user_login, single_user, all_users, delete_user, update_user } from '../controller/userAuthForms.js'
 
 
 

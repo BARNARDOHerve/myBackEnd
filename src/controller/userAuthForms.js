@@ -1,6 +1,6 @@
-import User from '../models/userAuthMod';  
-import { generalToken } from '../helper/token';
-import hashPassword from '../configuration/hashpassword';
+import User from '../models/userAuthMod.js';  
+import { generalToken } from '../helper/token.js';
+import hashPassword from '../configuration/hashpassword.js';
 import bcrypt from 'bcryptjs';
 
 

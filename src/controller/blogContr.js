@@ -1,4 +1,4 @@
-import blogCollection from '../models/blogMod';
+import blogCollection from '../models/blogMod.js';
 
 
 

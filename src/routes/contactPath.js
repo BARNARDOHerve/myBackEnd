@@ -1,5 +1,5 @@
 import express from 'express';
-import { createComment, singleComment, allComments, deleteComment } from '../controller/contactContr'
+import { createComment, singleComment, allComments, deleteComment } from '../controller/contactContr.js'
 
 
 

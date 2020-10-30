@@ -1,9 +1,9 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import userRouter from './userPath';
-import blogRouter from './blogPath';
-import contactRoute from './contactPath';
-import dotenv from 'dotenv';
+import userRouter from './src/routes/userPath.js';
+import blogRouter from './src/routes/blogPath.js';
+import contactRoute from './src/routes/contactPath.js';
+// import dotenv from 'dotenv';
 
 
 const app = express();
@@ -14,9 +14,9 @@ app.use('/', blogRouter);
 app.use('/', contactRoute);
 
 
-dotenv.config();
-const PORT = process.env.PORT;
-app.listen(PORT, () => console.log(`App running on port ${PORT}`));
+// dotenv.config();
+// const PORT = process.env.PORT;
+// app.listen(PORT, () => console.log(`App running on port ${PORT}`));
 
 mongoose.connect("mongodb://localhost:27017/myCapstoneProject", {
 
