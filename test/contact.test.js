@@ -1,21 +1,11 @@
 
 import request from 'supertest';
-import  generateToken  from '../src/helper/token';
 import mongoose from 'mongoose';
-import Contact from '../src/models/contactMod';
-import app from '../src/index'
+import Contact from '../src/models/contactMod.js';
+import app from '../app.js';
 
-
-const dbUrl = 'mongodb://localhost:27017/testing';
 
 describe('myTest', () => {
-    beforeAll(() => {
-        mongoose.connect(dbUrl, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
-    });
-    let token;
     let contact;
     beforeEach( async () => {
         const user = {
@@ -30,8 +20,6 @@ describe('myTest', () => {
             email:"bahowinny@gmail.com",
             comment: 'go back aa abbbbbb cccccccc'
         }
-
-        // token = generateToken.generalToken(user);
     })
     afterEach( async () => await Contact.deleteMany());
     
@@ -62,7 +50,6 @@ describe('myTest', () => {
     it("it should post a new contact", async () => {
         await request(app)
             .post('/Comments/Create')
-            // .set('auth-token', token)
             .send(contact);
 
         expect(contact).not.toBe(null)
@@ -74,7 +61,6 @@ describe('myTest', () => {
         const id = updateBlog._id;
         const res = await request(app)
             .put(`/Comments/Update/${id}`)
-            // .set('auth-token', token)
             .send({
                 bTitle:"computer maintenance for biginners",
                 bContent:"the practice of keeping computers in a good state of repair.If the cooling system is not filtered then regular computer cleaning may prevent short circuits and overheating.",
@@ -91,7 +77,6 @@ describe('myTest', () => {
             
             const res = await request(app)
                 .delete(`/Comments/Delete/${id}`)
-                // .set('auth-token', token)
             expect(res.status).toBe(200);
             done();
         })

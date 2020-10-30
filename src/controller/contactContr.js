@@ -1,4 +1,4 @@
-import contactCollection from '../models/contactMod';
+import contactCollection from '../models/contactMod.js';
 
 
 

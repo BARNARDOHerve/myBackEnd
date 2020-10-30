@@ -1,7 +1,7 @@
 import express from 'express';
-import {createBlog, singleBlog, allBlogs, updateBlog, deleteBlog} from '../controller/blogContr';
-import { auth } from '../midleware/auth';
-import { validateblog } from '../midleware/validation';
+import {createBlog, singleBlog, allBlogs, updateBlog, deleteBlog} from '../controller/blogContr.js';
+import { auth } from '../midleware/auth.js';
+import { validateblog } from '../midleware/validation.js';
 
 
 

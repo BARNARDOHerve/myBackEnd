@@ -1,20 +1,12 @@
 
 import request from 'supertest';
-import  generateToken  from '../src/helper/token';
 import mongoose from 'mongoose';
-import User from '../src/models/userAuthMod';
-import app from '../src/index'
+import User from '../src/models/userAuthMod.js';
+import app from '../app.js';
 
 
-const dbUrl = 'mongodb://localhost:27017/testing';
 
 describe('myTest', () => {
-    beforeAll(() => {
-        mongoose.connect(dbUrl, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
-    });
     let token;
     let user;
     beforeEach( async () => {
@@ -31,8 +23,6 @@ describe('myTest', () => {
             email:"bahowinny@gmail.com",
             password: 'Barnardo.12'
         }
-
-        // token = generateToken.generalToken(user);
     })
     afterEach( async () => await User.deleteMany());
     
@@ -64,7 +54,6 @@ describe('myTest', () => {
     it("it should signup new user", async () => {
         await request(app)
             .post('/users/signup')
-            // .set('auth-token', token)
             .send(user);
 
         expect(user).not.toBe(null)
@@ -80,7 +69,6 @@ describe('myTest', () => {
         }
         const res = await request(app)
             .post('/users/login')
-            // .set('auth-token', token)
             .send(user);
 
         expect(user).not.toBe(null)
@@ -92,7 +80,6 @@ describe('myTest', () => {
         const id = updateuser._id;
         const res = await request(app)
             .put(`/users/Update/${id}`)
-            // .set('auth-token', token)
             .send({
                 firstName:"winny",
                 lastName:"winny",
@@ -110,7 +97,6 @@ describe('myTest', () => {
             
             const res = await request(app)
                 .delete(`/users/Delete/${id}`)
-                // .set('auth-token', token)
             expect(res.status).toBe(200);
             done();
         })
