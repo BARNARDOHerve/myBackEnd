@@ -13,10 +13,9 @@ app.use('/', userRouter);
 app.use('/', blogRouter); 
 app.use('/', contactRoute);
 
-
-// dotenv.config();
-// const PORT = process.env.PORT;
-// app.listen(PORT, () => console.log(`App running on port ${PORT}`));
+app.get('/', (req, res) => {
+    res.send('welcome to my heroku.........');
+});
 
 mongoose.connect("mongodb://localhost:27017/myCapstoneProject", {
 
