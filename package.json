@@ -1,12 +1,14 @@
 {
   "name": "my-projectsever",
   "version": "0.0.0",
-  "private": true,
+  "main": "src/index.js",
   "scripts": {
     "test": "set PORT=8000 && jest --coverage --setTimeout=30000 --detectOpenHandles --verbose",
-    "build": ".\\node_modules\\.bin\\babel src --out-dir dist",
-    "start": "node dist/index.js",
-    "dev": "nodemon --exec babel-node src/index.js"
+    "start": "babel src -d dist && node dist/index.js",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "build": "babel src -d dist"
+
+    
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
