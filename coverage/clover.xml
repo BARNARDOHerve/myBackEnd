@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1604045352524" clover="3.2.0">
-  <project timestamp="1604045352524" name="All files">
-    <metrics statements="194" coveredstatements="130" conditionals="28" coveredconditionals="9" methods="38" coveredmethods="20" elements="260" coveredelements="159" complexity="0" loc="194" ncloc="194" packages="7" files="14" classes="14"/>
+<coverage generated="1604153726694" clover="3.2.0">
+  <project timestamp="1604153726694" name="All files">
+    <metrics statements="196" coveredstatements="132" conditionals="28" coveredconditionals="9" methods="38" coveredmethods="20" elements="262" coveredelements="161" complexity="0" loc="196" ncloc="196" packages="7" files="15" classes="15"/>
     <package name="myBackend">
-      <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="10" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
       <file name="app.js" path="/Users/andela/Desktop/capstoneProject /myBackend/app.js">
-        <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <metrics statements="10" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="9" count="3" type="stmt"/>
         <line num="11" count="3" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
         <line num="13" count="3" type="stmt"/>
         <line num="14" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
         <line num="16" count="3" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
       </file>
     </package>
     <package name="myBackend.src.configuration">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="config.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/configuration/config.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+      </file>
       <file name="hashpassword.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/configuration/hashpassword.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="3" type="stmt"/>
