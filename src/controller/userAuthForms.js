@@ -97,7 +97,7 @@ export const delete_user = async (req, res, next) => {
         if (existuser.length) {
             try {
                const deleteUser = await User.deleteOne({_id: id});
-               res.status(200).json({message: `comment deleted ${existuser}`, deleteUser})
+               res.status(200).json({message: `user deleted ${existuser}`, deleteUser})
             } catch (error) {
                 throw new Error(error);
             };
