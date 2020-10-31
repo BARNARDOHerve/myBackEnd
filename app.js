@@ -14,7 +14,7 @@ app.use('/', blogRouter);
 app.use('/', contactRoute);
 
 app.get('/', (req, res) => {
-    res.send('welcome to my heroku.........');
+    res.send("welcome to my heroku, it is running don't worry.........");
 });
 
 mongoose.connect("mongodb://localhost:27017/myCapstoneProject", {
