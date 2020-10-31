@@ -3,21 +3,24 @@ import mongoose from 'mongoose';
 import userRouter from './src/routes/userPath.js';
 import blogRouter from './src/routes/blogPath.js';
 import contactRoute from './src/routes/contactPath.js';
-// import dotenv from 'dotenv';
+import config from './src/configuration/config.js';
 
 
 const app = express();
+
+const dbUrl = config.DATABASE_URL;
 
 app.use(express.json());
 app.use('/', userRouter);
 app.use('/', blogRouter); 
 app.use('/', contactRoute);
 
+
 app.get('/', (req, res) => {
     res.send("welcome to my heroku, it is running don't worry.........");
 });
 
-mongoose.connect("mongodb://localhost:27017/myCapstoneProject", {
+mongoose.connect(dbUrl, {
 
     useNewUrlParser: true,
     useCreateIndex: true,
