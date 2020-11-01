@@ -1,9 +1,9 @@
 {
   "name": "my-projectsever",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "index.js", 
   "scripts": {
-    "test": "set PORT=8000 && jest --coverage --setTimeout=5000 --detectOpenHandles --verbose",
+    "test": "set PORT=8000 && jest --coverage --setTimeout=30000 --detectOpenHandles --verbose",
     "start": "node index.js",
     "dev": "nodemon --exec babel-node index.js",
     "build": "babel src -d dist"
