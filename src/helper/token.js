@@ -7,8 +7,8 @@ const secret = process.env.SECRET_KEY;
 
 
 export const generalToken = (user) => {
-    const {firstName, lastName, email} = user;
-    return jwt.sign({firstName, lastName, email}, secret, { expiresIn: '900s'});
+    const {firstName, lastName, email, _id, admin} = user;
+    return jwt.sign({firstName, lastName, email, _id, admin}, secret, { expiresIn: '900s'});
 
 };
 export const decrypToken = (Token) => {
