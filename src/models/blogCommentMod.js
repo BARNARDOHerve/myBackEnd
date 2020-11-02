@@ -10,7 +10,7 @@ const Comment = mongoose.model('Comment', new mongoose.Schema({
         required: true
     },
     blogId: {
-        _id: mongoose.Schema.Types.ObjectId
+        id: mongoose.Schema.Types.ObjectId
     }
 }));
  

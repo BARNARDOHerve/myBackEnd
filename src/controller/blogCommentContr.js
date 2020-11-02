@@ -3,41 +3,41 @@ import Blog from '../models/blogMod.js';
 import Comment from '../models/blogCommentMod.js';
 
 
-export default {
-    addComment : async (req, res) => {
-       try {
-           const { commentBody } = req.body;
-           const { email } = req.user;
-           const { _id } = req.params;
-           if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(400).json({error: 'Invalid ID'});
 
-           const articleToComment = await Blog.findById({_id});
-           if (!articleToComment) return res.status(404).json({error: 'No article with the given ID found!'});
+export const addComment = async (req, res) => {
+    try {
+        const { commentBody } = req.body;
+        const { email } = req.user;
+        const { id } = req.params;
+        if (!mongoose.Types.ObjectId.isValid(id)) return res.status(400).json({error: 'Invalid ID'});
 
-           const newComment = new Comment({
-               commentSender: { email },
-               commentBody: commentBody,
-               blogId: {_id}
-           });
-           const savedComment = await newComment.save();
+        const articleToComment = await Blog.findById({id});
+        if (!articleToComment) return res.status(404).json({error: 'No article with the given ID found!'});
 
-           return res.status(200).json({message: 'Comment added successfully', savedComment})
+        const newComment = new Comment({
+            commentSender: { email },
+            commentBody: commentBody,
+            blogId: {id}
+        });
+        const savedComment = await newComment.save();
 
-       } catch (err) {
-           return res.status(500).json({error: err.message})
-       }
-   },
-   readComment : async (req, res) => {
-        try {
-            const { _id } = req.params;
-            if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(400).json({error: 'Invalid ID'});
+        return res.status(200).json({message: 'Comment added successfully', savedComment})
 
-            const allComments = await Comment.find().where('blogId._id', {$eq: _id});
-            if (allComments.length === 0) return res.status(404).json({error: 'No comments for this article yet!'});
-            
-            return res.status(200).json(allComments)
-        } catch (err) {
-            return res.status(500).json({error: err.message})
-        }
+    } catch (err) {
+        return res.status(500).json({error: err.message})
     }
-}
+};
+
+export const readComment = async (req, res) => {
+    try {
+        const { id } = req.params;
+        if (!mongoose.Types.ObjectId.isValid(id)) return res.status(400).json({error: 'Invalid ID'});
+
+        const allComments = await Comment.find().where('blogId._id', {$eq: id});
+        if (allComments.length === 0) return res.status(404).json({error: 'No comments for this article yet!'});
+        
+        return res.status(200).json(allComments)
+    } catch (err) {
+        return res.status(500).json({error: err.message})
+    }
+};
