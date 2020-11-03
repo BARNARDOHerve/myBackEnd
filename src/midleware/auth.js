@@ -20,4 +20,12 @@ export const auth = (req, res, next) => {
     
 }
 
+export const adminAuth = (req, res, next) => {
+    const { admin } = req.user;
+ 
+    if (!admin) return res.status(401).json({msg: 'Access denied, for admins only!'})
+ 
+    return next();
+}
+
 // module.exports = auth;

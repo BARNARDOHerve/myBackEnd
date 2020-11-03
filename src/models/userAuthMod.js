@@ -1,6 +1,14 @@
 import mongoose from 'mongoose';
 
 const User = mongoose.model('User', new mongoose.Schema({
+    admin: {
+        type: Boolean,
+        default: false
+    },
+    role: {
+        type: String,
+        default: "standard user"
+    },
     firstName: {
         type: String,
         required: true
