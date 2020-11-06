@@ -4,8 +4,8 @@ import { auth } from '../midleware/auth.js';
 
 const commentRouter = express.Router();
 
-commentRouter.post('Blogs/comment/:id', auth, addComment);
-commentRouter.get('Blogs/comment/:id', readComment)
+commentRouter.post('Blogs/comment/:_id', auth, addComment);
+commentRouter.get('Blogs/comment/:_id', readComment);
 
 
 
