@@ -3,11 +3,11 @@ import request from 'supertest';
 import mongoose from 'mongoose';
 import User from '../src/models/userAuthMod.js';
 import app from '../app.js';
-
+// import authorization from '../src/midleware/auth'
 
 
 describe('myTest', () => {
-    let token;
+    // let auth = authorization;
     let user;
     beforeEach( async () => {
         const user1 = {
@@ -81,6 +81,8 @@ describe('myTest', () => {
         const res = await request(app)
             .put(`/users/Update/${id}`)
             .send({
+                // admin: "",
+                // role: "",
                 firstName:"winny",
                 lastName:"winny",
                 email:"bahowinny@gmail.com",

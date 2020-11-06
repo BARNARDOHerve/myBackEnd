@@ -4,7 +4,6 @@ import { auth } from '../midleware/auth.js';
 import { validateblog } from '../midleware/validation.js';
 
 
-
 const blogRouter = express.Router();
 
 

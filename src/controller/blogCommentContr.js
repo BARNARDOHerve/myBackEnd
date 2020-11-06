@@ -5,19 +5,20 @@ import Comment from '../models/blogCommentMod.js';
 
 
 export const addComment = async (req, res) => {
+    // console.log("hey what's wrong");
     try {
         const { commentBody } = req.body;
         const { email } = req.user;
-        const { id } = req.params;
-        if (!mongoose.Types.ObjectId.isValid(id)) return res.status(400).json({error: 'Invalid ID'});
+        const { _id } = req.params;
+        if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(400).json({error: 'Invalid ID'});
 
-        const articleToComment = await Blog.findById({id});
+        const articleToComment = await Blog.findById({_id});
         if (!articleToComment) return res.status(404).json({error: 'No article with the given ID found!'});
 
         const newComment = new Comment({
             commentSender: { email },
             commentBody: commentBody,
-            blogId: {id}
+            blogId: {_id}
         });
         const savedComment = await newComment.save();
 
@@ -30,10 +31,10 @@ export const addComment = async (req, res) => {
 
 export const readComment = async (req, res) => {
     try {
-        const { id } = req.params;
-        if (!mongoose.Types.ObjectId.isValid(id)) return res.status(400).json({error: 'Invalid ID'});
+        const { _id } = req.params;
+        if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(400).json({error: 'Invalid ID'});
 
-        const allComments = await Comment.find().where('blogId._id', {$eq: id});
+        const allComments = await Comment.find().where('blogId._id', {$eq: _id});
         if (allComments.length === 0) return res.status(404).json({error: 'No comments for this article yet!'});
         
         return res.status(200).json(allComments)
