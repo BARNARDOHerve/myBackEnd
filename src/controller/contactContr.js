@@ -8,7 +8,7 @@ export const createComment = async (req, res) => {
 
         const checkcomment = await contactCollection.findOne({email});
         if (checkcomment) {
-            return res.status(400).json({error: 'Your comment has been sent!'});
+            return res.status(400).json({error: 'Proccess failed'});
         }
         
         const newcomment =  new contactCollection({
