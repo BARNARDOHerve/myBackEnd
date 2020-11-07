@@ -15,6 +15,8 @@ describe('myTest', () => {
     beforeEach( async () => {
         const user = {
             _id: mongoose.Types.ObjectId().toHexString(),
+            admin: false,
+            role: "standard user",
             firstName:"winny",
             lastName:"baho",
             email:"bahowinny@gmail.com",
@@ -45,6 +47,8 @@ describe('read blog', () => {
     beforeEach( async () => {
         const user = {
             _id: mongoose.Types.ObjectId().toHexString(),
+            admin: true,
+            role: "admin",
             firstName:"winny",
             lastName:"baho",
             email:"bahowinny@gmail.com",

@@ -1,14 +1,15 @@
 {
   "name": "my-projectsever",
   "version": "0.0.0",
-  "main": "index.js", 
+  "main": "index.js",
   "scripts": {
-    "test": "set PORT=8000 && jest --coverage --setTimeout=30000 --detectOpenHandles --verbose",
+    "test": "set PORT=8000 && jest --coverage --setTimeout=50000 --detectOpenHandles --verbose",
     "start": "node index.js",
     "dev": "nodemon --exec babel-node index.js",
     "build": "babel src -d dist"
   },
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -28,5 +29,5 @@
   "jest": {
     "testEnvironment": "node"
   },
-"type": "module"
+  "type": "module"
 }

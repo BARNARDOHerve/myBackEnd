@@ -5,7 +5,6 @@ import Comment from '../models/blogCommentMod.js';
 
 
 export const addComment = async (req, res) => {
-    // console.log("hey what's wrong");
     try {
         const { commentBody } = req.body;
         const { email } = req.user;

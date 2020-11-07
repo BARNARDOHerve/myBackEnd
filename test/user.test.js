@@ -12,16 +12,20 @@ describe('myTest', () => {
     beforeEach( async () => {
         const user1 = {
             _id: mongoose.Types.ObjectId().toHexString(),
+            admin: true,
+            role: "admin",
             firstName:"winny",
             lastName:"baho",
             email:"bahowinny@gmail.com",
             password:"baho-123"
         };
         user = {
+            admin: true,
+            role: "admin",
             firstName:"winny",
-            lastName:"winny",
+            lastName:"baho",
             email:"bahowinny@gmail.com",
-            password: 'Barnardo.12'
+            password: 'Baho.123'
         }
     })
     afterEach( async () => await User.deleteMany());
@@ -36,10 +40,12 @@ describe('myTest', () => {
     
     it("it should get one user", async (done) => {
         const user = {
+            admin: false,
+            role: "standard user",
             firstName:"winny",
-            lastName:"winny",
+            lastName:"baho",
             email:"bahowinny@gmail.com",
-            password: 'Barnardo.12'
+            password: 'Baho-123'
         }
         const newUser = await User(user)
         const savedUser = await newUser.save()
@@ -62,10 +68,12 @@ describe('myTest', () => {
     
     it("it should login", async () => {
         const user = {
+            admin: false,
+            role: "standard user",
             firstName:"winny",
-            lastName:"winny",
+            lastName:"baho",
             email:"bahowinny@gmail.com",
-            password: 'Barnardo.12'
+            password: 'Baho-123'
         }
         const res = await request(app)
             .post('/users/login')
@@ -81,12 +89,12 @@ describe('myTest', () => {
         const res = await request(app)
             .put(`/users/Update/${id}`)
             .send({
-                // admin: "",
-                // role: "",
+                admin: false,
+                role: "standard user",
                 firstName:"winny",
-                lastName:"winny",
+                lastName:"baho",
                 email:"bahowinny@gmail.com",
-                password: 'Barnardo.12'
+                password: 'Baho-123'
             })
         expect(res.status).toBe(200);
         done();
