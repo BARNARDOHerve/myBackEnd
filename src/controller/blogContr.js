@@ -1,18 +1,30 @@
 import blogCollection from '../models/blogMod.js';
 
 
+export const createBlog = async (req,res,next)=>{
+    try {
+        const { bTitle, bContent} = req.body;
+        const { firstName, lastName } = req.user;
 
-export const createBlog = (req, res, next) => {
-    blogCollection.create(req.body)
-     .then((blog) => {
-        console.log('Blog Created', blog);
-        res.statusCode = 200;
-        res.json(blog);
-    }, (err) => next(err))
-    .catch((err) => next(err));
- };
+        const blog = await blogCollection.findOne({bTitle});
+        
+        if (blog) return res.status(400).json({msg: 'Blog published before'})
+        
+        const newBlog = await blogCollection({
+            bTitle,
+            bPublisher: { firstName, lastName },
+            bContent
+        })
 
- export const singleBlog = async (req, res) => {
+        const savedBlog = await newBlog.save();
+
+        return res.status(201).json({msg: 'blog created', savedBlog})
+    } catch (err) {
+        return res.status(500).json({msg: err.message})
+    }
+};
+
+export const singleBlog = async (req, res) => {
     try {
         let {id} = req.params;
         await blogCollection.findById(id).then((blogs) => {
@@ -33,9 +45,9 @@ export const allBlogs = (req, res, next) => {
         res.json(blogs);
     }, (err) => next(err))
     .catch((err) => next(err));
- };
+};
 
- export const updateBlog = async (req, res, next) => {
+export const updateBlog = async (req, res, next) => {
      try {
          const blog = await blogCollection.findByIdAndUpdate({_id: req.params.id }, req.body);
          const updatedBlog = await blogCollection.findOne({_id: req.params.id });
@@ -44,9 +56,9 @@ export const allBlogs = (req, res, next) => {
      catch (error) {
          res.status(400).json(error)
      }
- };
+};
 
- export const deleteBlog = async (req, res, next) => {
+export const deleteBlog = async (req, res, next) => {
      let { id } = req.params;
 
      try {

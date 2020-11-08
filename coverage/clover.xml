@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1604612439773" clover="3.2.0">
-  <project timestamp="1604612439773" name="All files">
+<coverage generated="1604694869526" clover="3.2.0">
+  <project timestamp="1604694869526" name="All files">
     <metrics statements="225" coveredstatements="119" conditionals="38" coveredconditionals="8" methods="41" coveredmethods="14" elements="304" coveredelements="141" complexity="0" loc="225" ncloc="225" packages="7" files="18" classes="18"/>
     <package name="myBackend">
       <metrics statements="11" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <file name="app.js" path="/Users/andela/Desktop/capstoneProject /myBackend/app.js">
+      <file name="app.js" path="/Users/andela/Desktop/myBackend/app.js">
         <metrics statements="11" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="10" count="3" type="stmt"/>
         <line num="12" count="3" type="stmt"/>
@@ -21,11 +21,11 @@
     </package>
     <package name="myBackend.src.configuration">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="config.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/configuration/config.js">
+      <file name="config.js" path="/Users/andela/Desktop/myBackend/src/configuration/config.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="3" type="stmt"/>
       </file>
-      <file name="hashpassword.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/configuration/hashpassword.js">
+      <file name="hashpassword.js" path="/Users/andela/Desktop/myBackend/src/configuration/hashpassword.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="3" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -35,7 +35,7 @@
     </package>
     <package name="myBackend.src.controller">
       <metrics statements="154" coveredstatements="64" conditionals="22" coveredconditionals="5" methods="31" coveredmethods="10"/>
-      <file name="blogCommentContr.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/controller/blogCommentContr.js">
+      <file name="blogCommentContr.js" path="/Users/andela/Desktop/myBackend/src/controller/blogCommentContr.js">
         <metrics statements="20" coveredstatements="2" conditionals="8" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="7" count="3" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
@@ -58,7 +58,7 @@
         <line num="40" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
       </file>
-      <file name="blogContr.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/controller/blogContr.js">
+      <file name="blogContr.js" path="/Users/andela/Desktop/myBackend/src/controller/blogContr.js">
         <metrics statements="40" coveredstatements="20" conditionals="2" coveredconditionals="1" methods="12" coveredmethods="4"/>
         <line num="5" count="3" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
@@ -101,7 +101,7 @@
         <line num="68" count="0" type="stmt"/>
         <line num="69" count="0" type="stmt"/>
       </file>
-      <file name="contactContr.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/controller/contactContr.js">
+      <file name="contactContr.js" path="/Users/andela/Desktop/myBackend/src/controller/contactContr.js">
         <metrics statements="37" coveredstatements="23" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="4"/>
         <line num="5" count="3" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
@@ -141,7 +141,7 @@
         <line num="71" count="0" type="stmt"/>
         <line num="72" count="0" type="stmt"/>
       </file>
-      <file name="userAuthForms.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/controller/userAuthForms.js">
+      <file name="userAuthForms.js" path="/Users/andela/Desktop/myBackend/src/controller/userAuthForms.js">
         <metrics statements="57" coveredstatements="19" conditionals="8" coveredconditionals="2" methods="10" coveredmethods="2"/>
         <line num="8" count="3" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
@@ -204,7 +204,7 @@
     </package>
     <package name="myBackend.src.helper">
       <metrics statements="9" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="token.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/helper/token.js">
+      <file name="token.js" path="/Users/andela/Desktop/myBackend/src/helper/token.js">
         <metrics statements="9" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="5" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
@@ -219,7 +219,7 @@
     </package>
     <package name="myBackend.src.midleware">
       <metrics statements="21" coveredstatements="11" conditionals="14" coveredconditionals="3" methods="4" coveredmethods="2"/>
-      <file name="auth.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/midleware/auth.js">
+      <file name="auth.js" path="/Users/andela/Desktop/myBackend/src/midleware/auth.js">
         <metrics statements="15" coveredstatements="10" conditionals="8" coveredconditionals="3" methods="3" coveredmethods="2"/>
         <line num="5" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
@@ -237,7 +237,7 @@
         <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="28" count="0" type="stmt"/>
       </file>
-      <file name="validation.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/midleware/validation.js">
+      <file name="validation.js" path="/Users/andela/Desktop/myBackend/src/midleware/validation.js">
         <metrics statements="6" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="2" count="3" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -249,32 +249,32 @@
     </package>
     <package name="myBackend.src.models">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="blogCommentMod.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/models/blogCommentMod.js">
+      <file name="blogCommentMod.js" path="/Users/andela/Desktop/myBackend/src/models/blogCommentMod.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="4" count="3" type="stmt"/>
       </file>
-      <file name="blogMod.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/models/blogMod.js">
+      <file name="blogMod.js" path="/Users/andela/Desktop/myBackend/src/models/blogMod.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="6" count="3" type="stmt"/>
       </file>
-      <file name="contactMod.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/models/contactMod.js">
+      <file name="contactMod.js" path="/Users/andela/Desktop/myBackend/src/models/contactMod.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="4" count="3" type="stmt"/>
       </file>
-      <file name="userAuthMod.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/models/userAuthMod.js">
+      <file name="userAuthMod.js" path="/Users/andela/Desktop/myBackend/src/models/userAuthMod.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="3" type="stmt"/>
       </file>
     </package>
     <package name="myBackend.src.routes">
       <metrics statements="21" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="blogCommentPath.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/routes/blogCommentPath.js">
+      <file name="blogCommentPath.js" path="/Users/andela/Desktop/myBackend/src/routes/blogCommentPath.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="5" count="3" type="stmt"/>
         <line num="7" count="3" type="stmt"/>
         <line num="8" count="3" type="stmt"/>
       </file>
-      <file name="blogPath.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/routes/blogPath.js">
+      <file name="blogPath.js" path="/Users/andela/Desktop/myBackend/src/routes/blogPath.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="7" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>
@@ -283,7 +283,7 @@
         <line num="16" count="3" type="stmt"/>
         <line num="18" count="3" type="stmt"/>
       </file>
-      <file name="contactPath.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/routes/contactPath.js">
+      <file name="contactPath.js" path="/Users/andela/Desktop/myBackend/src/routes/contactPath.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="6" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>
@@ -291,7 +291,7 @@
         <line num="14" count="3" type="stmt"/>
         <line num="16" count="3" type="stmt"/>
       </file>
-      <file name="userPath.js" path="/Users/andela/Desktop/capstoneProject /myBackend/src/routes/userPath.js">
+      <file name="userPath.js" path="/Users/andela/Desktop/myBackend/src/routes/userPath.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="7" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>

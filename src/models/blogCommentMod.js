@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 
-const Comment = mongoose.model('Comment', new mongoose.Schema({
+const blogComment = mongoose.model('blogComment', new mongoose.Schema({
     commentSender: {
-        email: String, 
+        email: String 
     },
     commentBody: {
         type: String,
@@ -13,5 +13,5 @@ const Comment = mongoose.model('Comment', new mongoose.Schema({
         _id: mongoose.Schema.Types.ObjectId
     }
 }));
- 
-export default Comment;
+
+export default blogComment;
