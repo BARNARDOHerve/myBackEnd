@@ -7,23 +7,18 @@ import bcrypt from 'bcryptjs';
 
 export const user_signup = async (req, res) => {
     try {
-
         const { firstName, lastName, email, password} = req.body;
-
         const checkUser = await User.findOne({email});
         if (checkUser) {
             return res.status(400).json({error: 'Email already exist!'});
         }
-        
         const hPassword = await hashPassword(password);
-
         const newUser =  new User({
             firstName,
             lastName,
             email,
             password: hPassword
         });
-    
         const savedUser = await newUser.save();
         return res.status(201).json({msg: 'Account created successfully', savedUser})
     } catch (err) {
@@ -33,16 +28,12 @@ export const user_signup = async (req, res) => {
 
 export const user_login = async (req, res) => {
     try {
-     
         const { email, password} = req.body;
-        
         const checkUser = await User.findOne({email});
         if (!checkUser) {
             return res.status(400).json({error: 'the account is invalid'});
         }
-
         const validPassword = await bcrypt.compare(password, checkUser.password);
-
         if (!validPassword) {
             return res.status(400).json({error: 'invalid password'});
         }
