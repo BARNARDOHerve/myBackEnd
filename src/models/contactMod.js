@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 
-
 const contactCollection = mongoose.model('contacts', new mongoose.Schema({
     Name: {
         type: String,

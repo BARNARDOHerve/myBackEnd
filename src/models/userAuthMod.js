@@ -34,7 +34,7 @@ const User = mongoose.model('User', new mongoose.Schema({
         type: Date,
         default: new Date()
     }
-}));
-
+  })
+);
 
 export default User;

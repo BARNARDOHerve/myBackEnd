@@ -33,3 +33,35 @@ export const readComment = async (req, res) => {
         return res.status(500).json({error: err.message})
     }
 };
+
+// export const selectAllComment = async (req, res) => {
+//     try {
+//         const comments = await Comment.find().sort({ createdAt: -1 });
+//         res.status(200).json({ comments });
+        
+//     }
+//     catch (error) {
+//         res.status(400).json(`Error: ${err}`);
+//     }
+// };
+
+export const deleteComment = async (req, res) => {
+    let { id } = req.params;
+    if (id) {
+        try {
+        const existComment = await blogComment.find({ _id: id });
+        
+        if (existComment.length) {
+                const deletedComment = await blogComment.deleteOne({ _id: id });
+                res.status(200).send(`Comment is deleted ${existComment}`);
+            } else {
+                res.status(404).json({ status: 403, error: 'Comment Id does not exist' });
+            }
+        }
+            catch (error) {
+                throw new Error(error);
+            }
+    } else {
+        res.status(403).json({ status: 403, error: 'Invalid comment Id' });
+    }
+};

@@ -11,9 +11,9 @@ const app = express();
 const dbUrl = config.DATABASE_URL;
 
 app.use(express.json());
-app.use('/', userRouter);
-app.use('/', blogRouter); 
-app.use('/', contactRoute);
+app.use('/Users', userRouter);
+app.use('/Blogs', blogRouter); 
+app.use('/Queries', contactRoute);
 
 
 
