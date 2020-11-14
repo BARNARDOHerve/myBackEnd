@@ -45,23 +45,23 @@ export const readComment = async (req, res) => {
 //     }
 // };
 
-export const deleteComment = async (req, res) => {
-    let { id } = req.params;
-    if (id) {
-        try {
-        const existComment = await blogComment.find({ _id: id });
+// export const deleteComment = async (req, res) => {
+//     let { id } = req.params;
+//     if (id) {
+//         try {
+//         const existComment = await blogComment.find({ _id: id });
         
-        if (existComment.length) {
-                const deletedComment = await blogComment.deleteOne({ _id: id });
-                res.status(200).send(`Comment is deleted ${existComment}`);
-            } else {
-                res.status(404).json({ status: 403, error: 'Comment Id does not exist' });
-            }
-        }
-            catch (error) {
-                throw new Error(error);
-            }
-    } else {
-        res.status(403).json({ status: 403, error: 'Invalid comment Id' });
-    }
-};
+//         if (existComment.length) {
+//                 const deletedComment = await blogComment.deleteOne({ _id: id });
+//                 res.status(200).send(`Comment is deleted ${existComment}`);
+//             } else {
+//                 res.status(404).json({ status: 403, error: 'Comment Id does not exist' });
+//             }
+//         }
+//             catch (error) {
+//                 throw new Error(error);
+//             }
+//     } else {
+//         res.status(403).json({ status: 403, error: 'Invalid comment Id' });
+//     }
+// };
