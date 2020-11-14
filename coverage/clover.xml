@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1605353686652" clover="3.2.0">
-  <project timestamp="1605353686653" name="All files">
-    <metrics statements="232" coveredstatements="167" conditionals="36" coveredconditionals="12" methods="35" coveredmethods="25" elements="303" coveredelements="204" complexity="0" loc="232" ncloc="232" packages="7" files="17" classes="17"/>
+<coverage generated="1605355132196" clover="3.2.0">
+  <project timestamp="1605355132196" name="All files">
+    <metrics statements="220" coveredstatements="165" conditionals="32" coveredconditionals="12" methods="34" coveredmethods="25" elements="286" coveredelements="202" complexity="0" loc="220" ncloc="220" packages="7" files="17" classes="17"/>
     <package name="myBackend">
       <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="app.js" path="/Users/andela/Desktop/myBackend/app.js">
@@ -31,9 +31,9 @@
       </file>
     </package>
     <package name="myBackend.src.controller">
-      <metrics statements="167" coveredstatements="106" conditionals="28" coveredconditionals="8" methods="29" coveredmethods="20"/>
+      <metrics statements="156" coveredstatements="105" conditionals="24" coveredconditionals="8" methods="28" coveredmethods="20"/>
       <file name="blogCommentContr.js" path="/Users/andela/Desktop/myBackend/src/controller/blogCommentContr.js">
-        <metrics statements="31" coveredstatements="3" conditionals="12" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <metrics statements="20" coveredstatements="2" conditionals="8" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="6" count="3" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
@@ -54,17 +54,6 @@
         <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="31" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
-        <line num="48" count="3" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="50" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="54" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="55" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
       </file>
       <file name="blogContr.js" path="/Users/andela/Desktop/myBackend/src/controller/blogContr.js">
         <metrics statements="42" coveredstatements="34" conditionals="4" coveredconditionals="2" methods="9" coveredmethods="7"/>
@@ -274,9 +263,9 @@
       </file>
     </package>
     <package name="myBackend.src.routes">
-      <metrics statements="21" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="20" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="blogPath.js" path="/Users/andela/Desktop/myBackend/src/routes/blogPath.js">
-        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="7" count="3" type="stmt"/>
         <line num="10" count="3" type="stmt"/>
         <line num="12" count="3" type="stmt"/>
@@ -285,7 +274,6 @@
         <line num="18" count="3" type="stmt"/>
         <line num="21" count="3" type="stmt"/>
         <line num="22" count="3" type="stmt"/>
-        <line num="23" count="3" type="stmt"/>
       </file>
       <file name="contactPath.js" path="/Users/andela/Desktop/myBackend/src/routes/contactPath.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>

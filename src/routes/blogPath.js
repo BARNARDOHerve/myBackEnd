@@ -1,7 +1,7 @@
 import express from 'express';
 import {auth,adminAuth} from '../midleware/auth.js';
 import {validateblog} from '../midleware/validation.js';
-import {addComment, readComment, deleteComment} from '../controller/blogCommentContr.js'
+import {addComment, readComment} from '../controller/blogCommentContr.js'
 import {createBlog, singleBlog, allBlogs, updateBlog, deleteBlog} from '../controller/blogContr.js';
 
 const blogRouter = express.Router();
@@ -20,7 +20,7 @@ blogRouter.delete('/:id', [auth, adminAuth], deleteBlog);
 // ---------------commenting on blog----------------
 blogRouter.post('/comments/:_id', auth, addComment);
 blogRouter.get('/comments/:_id', readComment);
-blogRouter.get('/comments/:_id', [auth, adminAuth], deleteComment);
+// blogRouter.get('/comments/:_id', [auth, adminAuth], deleteComment);
 
 
 export default blogRouter;
