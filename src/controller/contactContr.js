@@ -1,7 +1,7 @@
 import contactCollection from '../models/contactMod.js';
 
 
-
+// create a query to the db
 export const createComment = async (req, res) => {
     try {
         const { Name, email, comment} = req.body;
@@ -23,7 +23,7 @@ export const createComment = async (req, res) => {
         return res.status(500).json({error: err.message})
     }
 }; 
-
+// select a single query from db
 export const singleComment = async (req, res) => {
     try {
         let {id} = req.params;
@@ -33,10 +33,12 @@ export const singleComment = async (req, res) => {
             res.json(comments);
         })
     } catch (error) {
-        throw new Error(error);
+        res.status(400).json(`Error: ${error}`);
+        // throw new Error(error);
     }
 };
 
+// select list of all users from db
 export const allComments = (req, res, next) => {
     contactCollection.find()
     .then((contacts) => {
@@ -49,6 +51,9 @@ export const allComments = (req, res, next) => {
     })
  };
 
+// update a query is not necessary
+
+// delete a query from the db
 export const deleteComment =  async (req, res, next) => {
     let { id } = req.params;
 

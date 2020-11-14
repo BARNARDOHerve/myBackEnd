@@ -1,16 +1,16 @@
+import bcrypt from 'bcryptjs';
 import User from '../models/userAuthMod.js';  
 import { generalToken } from '../helper/token.js';
 import hashPassword from '../configuration/hashpassword.js';
-import bcrypt from 'bcryptjs';
 
 
-
+// user signup
 export const user_signup = async (req, res) => {
     try {
         const { firstName, lastName, email, password} = req.body;
         const checkUser = await User.findOne({email});
         if (checkUser) {
-            return res.status(400).json({error: 'Email already exist!'});
+            return res.status(400).json({error: 'User already exist!'});
         }
         const hPassword = await hashPassword(password);
         const newUser =  new User({
@@ -26,6 +26,7 @@ export const user_signup = async (req, res) => {
     }
 }; 
 
+//  user signin 
 export const user_login = async (req, res) => {
     try {
         const { email, password} = req.body;
@@ -45,6 +46,7 @@ export const user_login = async (req, res) => {
     }
 }; 
 
+// update a user from the db
 export const update_user = async (req, res, next) => {
     try {
         const user = await User.findByIdAndUpdate({_id: req.params.id }, req.body);
@@ -56,6 +58,7 @@ export const update_user = async (req, res, next) => {
     }
 };
 
+// get a single user from db
 export const single_user = async (req, res) => {
     try {
         let {id} = req.params;
@@ -69,6 +72,7 @@ export const single_user = async (req, res) => {
     }
 };
 
+// get list of all users from db
 export const all_users = (req, res, next) => {
     User.find({})
     .then((users) => {
@@ -79,6 +83,7 @@ export const all_users = (req, res, next) => {
     .catch((err) => next(err));
  };
 
+ // delete a user from the db
 export const delete_user = async (req, res, next) => {
     let { id } = req.params;
 

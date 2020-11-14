@@ -1,6 +1,6 @@
 import blogCollection from '../models/blogMod.js';
 
-
+// add a blog to the db
 export const createBlog = async (req,res,next)=>{
     try {
         const { bTitle, bContent} = req.body;
@@ -19,11 +19,13 @@ export const createBlog = async (req,res,next)=>{
         const savedBlog = await newBlog.save();
 
         return res.status(201).json({msg: 'blog created', savedBlog})
-    } catch (err) {
-        return res.status(500).json({msg: err.message})
+    } catch (error) {
+        res.status(400).json(`Error: ${error}`);
+        // return res.status(500).json({msg: err.message})
     }
 };
 
+// get a single blog from db
 export const singleBlog = async (req, res) => {
     try {
         let {id} = req.params;
@@ -33,10 +35,12 @@ export const singleBlog = async (req, res) => {
             res.json(blogs);
         })
     } catch (error) {
-        throw new Error(error);
+        // throw new Error(error);
+        res.status(400).json(`Error: ${error}`);
     }
 };
 
+// get list of all blogs from db
 export const allBlogs = (req, res, next) => {
     blogCollection.find({})
     .then((blogs) => {
@@ -47,17 +51,19 @@ export const allBlogs = (req, res, next) => {
     .catch((err) => next(err));
 };
 
+// update a blog in the db
 export const updateBlog = async (req, res, next) => {
      try {
-         const blog = await blogCollection.findByIdAndUpdate({_id: req.params.id }, req.body);
-         const updatedBlog = await blogCollection.findOne({_id: req.params.id });
-         res.status(200).send(updatedBlog);
+        const blog = await blogCollection.findByIdAndUpdate({_id: req.params.id }, req.body);
+        const updatedBlog = await blogCollection.findOne({_id: req.params.id });
+        res.status(200).send(updatedBlog);
      } 
      catch (error) {
-         res.status(400).json(error)
+        res.status(400).json(`Error: ${error}`);
      }
 };
 
+// delete a blog from the db
 export const deleteBlog = async (req, res, next) => {
      let { id } = req.params;
 
@@ -69,7 +75,7 @@ export const deleteBlog = async (req, res, next) => {
                 const delete_blog = await blogCollection.deleteOne({_id: id});
                 res.status(200).json({message: `blog deleted ${existBlog}`, delete_blog})
              } catch (error) {
-                 throw new Error(error);
+                throw new Error(error);
              };
          }
          else {
@@ -77,7 +83,7 @@ export const deleteBlog = async (req, res, next) => {
          };
      } 
      catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(500).json({ status: 403, error: 'invalid blog Id '});
      };
   
